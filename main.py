@@ -1,23 +1,7 @@
-list1 =[
-    "Georgia:",
-    "North Carolina:",
-    "South Carolina:",
-    "Massachusetts:",
-    "Maryland:",
-    "Virginia:",
-    "Pennsylvania:",
-    "Delaware",
-    "New York:",
-    "New Jersey:",
-    "New Hampshire:",
-    "Massachusetts:",
-    "Rhode Island:",
-    "Connecticut:",
-    "New Hampshire:"
-   ]
+
 from PyPDF2 import PdfReader
 import  re
-def open_file(filename,list1):
+def open_file(filename):
     reader = PdfReader(filename)
     str_col = reader.pages[3]
     str_col1 = str_col.extract_text()
@@ -34,6 +18,6 @@ def open_file(filename,list1):
                 names.append(name)
                 data_dic[state] = names
     return  data_dic
-print(open_file("us.pdf",list1))
+print(open_file("us.pdf"))
 
 
